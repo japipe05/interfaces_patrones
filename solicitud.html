@@ -1,71 +1,123 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.88.1">
-    <title>Signin Template · Bootstrap v5.1</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
-
-    
-
-    <!-- Bootstrap core CSS -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Solicitud de Crédito</title>
+    <link rel="stylesheet" href="css/app.css">
+     <!-- Bootstrap core CSS -->
 <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-
-    
-    <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
-  </head>
-  <body class="text-center">
- <div class="container">   
-      <main class="form-control">
-        <form>
-          <div class="mb-3 row">
-            <label for="inputEmail" class="col-sm-6 col-form-label">Numero Documento</label>
-            <div class="col-sm-6">
-            <select class="form-select" aria-label="Default select example">
-              <option selected>TIPO DE DOCUMENTO</option>
-              <option value="1">CEDULA</option>
-              <option value="2">CEDULA EXTRANJERIA</option>
-            </select>
+</head>
+<body>
+    <div class="root">
+        <form action="" class="form-register">
+            <div class="form-register__header">
+                <ul class="progressbar">
+                    <li class="progressbar__option active">paso 1</li>
+                    <li class="progressbar__option">paso 2</li>
+                    <li class="progressbar__option">paso 3</li>
+                    <li class="progressbar__option">paso 4</li>
+                </ul>
+                <h1 class="form-register__title">Solicitud De Credito</h1>
             </div>
-          </div>
-          <div class="mb-3 row">
-            <label for="inputEmail" class="col-sm-6 col-form-label">Tipo Documento</label>
-            <div class="col-sm-6">
-            <input type="email" class="form-control" id="inputEmail" placeholder="NUMERO DOCUMENTO">
+            <div class="form-register__body">
+                <div class="step active" id="step-1">
+                    <div class="step__header">
+                        <h2 class="step__title">Validacion De Usuario<small>(Paso 1)</small></h2>
+                    </div>
+                    <div class="step__body">
+                        <select  class="step__input" aria-label="Default select example">
+                          <option selected>TIPO DE DOCUMENTO</option>
+                          <option value="1">CC</option>
+                          <option value="2">CE</option>
+                        </select>
+                        <input type="number" placeholder="Numero de documento" class="step__input">
+                        <input type="text" placeholder="Fecha Expedición YYYY/MM/DD" class="step__input">
+                    </div>
+                    <div class="step__footer">
+                        <button type="button" class="step__button step__button--next" data-to_step="2" data-step="1">Siguiente</button>
+                    </div>
+                </div>
+                <div class="step" id="step-2">
+                    <div class="step__header">
+                        <h2 class="step__title">Validacion de usuario<small>(Paso 2) Por tu seguridad
+                                                Hemos enviado un código a tu numero de celular registrado, para validar tu identidad y continuar con la solicitud de crédito.
+                                                Ingresa tu código aquí</small></h2>
+                    </div>
+                    <div class="step__body">
+                        <input type="text" placeholder="Digite código 999-999" class="step__input">
+                    </div>
+                    <div class="step__footer">
+                        <button type="button" class="step__button step__button--back" data-to_step="1" data-step="2">Regresar</button>
+                        <button type="button" class="step__button step__button--next" data-to_step="3" data-step="2">Siguiente</button>
+                    </div>
+                </div>
+                <div class="step" id="step-3">
+                    <div class="step__header">
+                        <h2 class="step__title">Informaion Personal<small>(Paso 3)</small></h2>
+                    </div>
+                    <div class="step__body">
+                        <input type="text" placeholder="Primer Nombre" class="step__input">
+                        <input type="text" placeholder="Segundo Nombre (opcional)" class="step__input">
+                        <input type="text" placeholder="Primer Apellido" class="step__input">
+                        <input type="text" placeholder="Segundo Apellido (opcional)" class="step__input">
+                        <input type="text" placeholder="Número de celular" class="step__input">
+                        <input type="email" placeholder="Correo" class="step__input">
+                        <div class="text-center">
+                          <label>
+                            <input type="checkbox" value="remember-me"> Autoriza centrales
+                          </label>
+                        </div>
+                    </div>
+                    <div class="step__footer">
+                        <button type="button" class="step__button step__button--back" data-to_step="2" data-step="3">Regresar</button>
+                        <button type="button" class="step__button step__button--next" data-to_step="4" data-step="3">Siguiente</button>
+                    </div>
+                </div>
+                <div class="step" id="step-4">
+                    <div class="step__header">
+                        <h2 class="step__title">Informaion Personal<small>(Paso 4)</small></h2>
+                    </div>
+                    <div class="step__body">
+                        <select  class="step__input" aria-label="Default select example">
+                          <option selected>Tipo contrato</option>
+                          <option value="F">Fijo</option>
+                          <option value="I">Indefinido</option>
+                          <option value="O">Otro</option>
+                        </select> 
+                        <input type="number" placeholder="Salario" class="step__input">
+                        <select  class="step__input" aria-label="Default select example">
+                          <option selected>Nivel academico</option>
+                          <option value="N">Ninguno</option>
+                          <option value="P">Primaria</option>
+                          <option value="S">Secundaria</option>
+                          <option value="T">Técnico</option>
+                          <option value="L">Tecnólogo</option>
+                          <option value="U">Universitario</option>
+                          <option value="O">postgrado</option>
+                        </select>
+                         <select  class="step__input" aria-label="Default select example">
+                          <option selected>Ocupacion</option>
+                          <option value="1">Jubilado</option>
+                          <option value="2">Empleado</option>
+                          <option value="3">Transportador</option>
+                          <option value="4">Independiente</option>
+                          <option value="8">Hogar</option>
+                        </select>
+                        <input type="text" placeholder="Ocupacion" class="step__input">
+                        <input type="email" placeholder="Fecha de Nacimiento" class="step__input">
+                        <input type="email" placeholder="Total activos" class="step__input">
+                        <input type="email" placeholder="Total pasivos" class="step__input">
+                    </div>
+                    <div class="step__footer">
+                        <button type="button" class="step__button step__button--back" data-to_step="3" data-step="4">Regresar</button>
+                        <button type="submit" class="step__button">solicitar</button>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="mb-3 row">
-            <div class="col-sm-10">
-            </div>
-            <div class="col-sm-2">
-               <button type="submit" class="btn btn-primary mb-3">Continuar</button>
-            </div>
-        </div>
         </form>
-      </main>
-</div>
-
-    
-  </body>
+    </div>
+    <script src="js/app.js"></script>
+</body>
 </html>
